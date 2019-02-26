@@ -1,0 +1,20 @@
+server:
+  port: 9091
+spring:
+  application:
+    name: test
+  resources:
+    static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,file:/www/ecampus/static/
+    
+  datasource:
+    #type: com.zaxxer.hikari.HikariDataSource
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.2.46:3307/ecampus_new?characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull
+    username: root
+    password: root
+    
+mybatis:
+  config-location: classpath:mybatis-config.xml
+  type-aliases-package: com.zj.data.domain
+  type-handlers-package: com.zj.data.mapper
+  mapper-locations: classpath:com.zj.data.mapper/*.xml
